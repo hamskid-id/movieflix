@@ -1,0 +1,185 @@
+#root {
+  margin: 0 auto;
+  width:100%;
+  height: 100vh;
+  /* padding: 2rem; */
+  text-align: center;
+  background: white;
+}
+.details-poster{
+  width:100%;
+}
+.pd-5{
+  padding:3rem;
+}
+.bg-black{
+  background: white;
+}
+.c-grey{
+  color:grey;
+}
+.wt-30{
+  width:30%;
+}
+.wt-50{
+  width:50%;
+}
+.wt-25{
+  width:25%;
+}
+.link{
+  text-decoration: none;
+  color:white;
+}
+.nowplaying{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.pd-2x{
+  padding-right:2rem;
+  padding-left:2rem;
+}
+.posterImg{
+  border-radius: 10px;
+  width: 12rem;
+}
+.moviesImg{
+  border-radius: 10px;
+  width: 11rem;
+}
+.br-10{
+  border-radius: 10px;
+}
+.screen{
+  background: white;
+  width:100%;
+}
+.overflowX{
+  overflow-x: auto;
+}
+.fs-7{
+  font-size: 0.7rem;
+}
+.cardTitle{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+h1{
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.wrapper{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border-radius: 10px;
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.nav-link{
+  margin-left:auto;
+  width:25%;
+  display: flex;
+  justify-content:space-between;
+}
+.relative{
+  position:relative;
+}
+.bg-purple{
+  background-color: purple;
+}
+.bg-red{
+  background:red;
+  border:1px solid red;
+}
+.tmbd{
+  width:5rem;
+}
+.wrapper::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image: linear-gradient(0deg, hsla(250,5%,5%,1),hsla(250,3%,3%,0.7));
+}
+*{
+  font-family: 'Nunito', sans-serif;
+}
+.wrap{
+  flex-wrap: wrap;
+}
+.row {
+  --bs-gutter-x: 0;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+  .nav-link{
+    width:25%;
+    flex-direction:column;
+    padding:1rem;
+    height: 9rem;
+  }
+ 
+  .pd-2x{
+    padding-right:1rem;
+    padding-left:1rem;
+  }
+  .pd-5{
+    padding:1rem;
+  }
+  .nowplaying{
+    flex-direction:column;
+  }
+  .wt-50,.wt-75,.wt-30{
+    width:100%;
+  }
+  .wt-25{
+    width:50%;
+  }
+  .details-poster{
+    width:50%;
+  }
+  .posterImg,.moviesImg{
+    border-radius: 10px;
+    width: 100%;
+  }
+}
