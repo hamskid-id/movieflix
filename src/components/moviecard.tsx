@@ -50,7 +50,7 @@ export const MovieCard=({
           breakpoint: 480,
           settings: {
             slidesToShow: 2,
-            slidesToScroll: 1,
+            slidesToScroll:23,
             centerMode:false,
           }
         }
@@ -63,7 +63,7 @@ export const MovieCard=({
             <div className="pt-3">
                 <Text
                     title={title}
-                    style="text-dark fs-5 text-start"
+                    style="text-white fs-6 text-start"
                 />
             </div>
             <Slider {...settings}>
@@ -79,7 +79,7 @@ export const MovieCard=({
                         return(
                             <div className="m-4 p-2">
                                 <div
-                                    className="d-flex flex-column border br-10"
+                                    className="d-flex flex-column lightgreen br-10"
                                     key={index}
                                     onClick={()=>navigate(`/movies/details/${type}/${id}`)}
                                     >
@@ -89,7 +89,7 @@ export const MovieCard=({
                                         />
                                         <div className="d-flex flex-column p-2">
                                             <Text 
-                                                style="fs-6 text-dark text-start mb-2 cardTitle"
+                                                style="fs-6 text-white text-start mb-2 cardTitle"
                                                 title={original_title}
                                             />
                                             <Rating

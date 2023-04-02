@@ -10,13 +10,13 @@ export const NavBrand=({
     return(
         <div className="d-flex align-items-center">
             <FaPlayCircle
-                color="purple"
+                color="red"
                 size="2.5rem"
                 className="me-1"
             />
             <Text
                 title="movieFlix"
-                style={`${color? color:`text-dark`} fs-3`}
+                style={`${color? color:`text-white`} fs-3`}
             />
         </div>
     )

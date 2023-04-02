@@ -1,9 +1,7 @@
 import { NavBrand } from "./navbrand"
-import { Text } from "./text"
-
 export const Footer=()=>{
     return(
-        <div className="d-flex flex-column align-items-center justify-content-center pt-5 bg bg-dark px-2">
+        <div className="d-flex flex-column align-items-center justify-content-center py-5 bg bg-black shadow px-2">
             <NavBrand color="text-white"/>
             <div className="d-flex wrap justify-content-between wrap wt-50 mt-5">
                 {
@@ -14,7 +12,7 @@ export const Footer=()=>{
                             <a 
                                 href="#"
                                 key={index}
-                                className="link wt-30 text-start mb-4 text-center"
+                                className="link wt-30 text-start mb-4"
                             >
                                 {item}
                             </a>
@@ -26,7 +24,7 @@ export const Footer=()=>{
             <img 
                 src="https://res.cloudinary.com/hamskid/image/upload/v1680270182/tmdb_vqqxw2.svg" 
                 alt="object not found"
-                className="tmbd mb-3"
+                className="tmbd my-3"
             />
         </div>
     )

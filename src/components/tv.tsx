@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { baseUrl ,apiKey, ImgBaseUrl} from "./baseUrl";
-import { Btn } from "./btn";
 import { FetchMovie } from "./fetch";
+import Spinner from "./loader/loader";
 import { Rating } from "./rating";
 import { Text } from "./text";
 
@@ -12,17 +12,27 @@ export const Tv=()=>{
         data,
         setData
     ]=useState<[]>([]);
+
+    const[
+        loading,
+        setLaoding
+    ]=useState<boolean>(false);
+
     const type="tv";
     const handleSubmit=(e: React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
         const{
             value
         }=e.currentTarget.search
-        FetchMovie(setData,`${baseUrl}/search/tv?api_key=${apiKey}&query=${value}&language=en-US&page=1`);
+        FetchMovie(setData,`${baseUrl}/search/tv?api_key=${apiKey}&query=${value}&language=en-US&page=1`,setLaoding);
     }
     useEffect(()=>{
-        FetchMovie(setData,`${baseUrl}/tv/popular?api_key=${apiKey}&language=en-US&page=1`);
+        FetchMovie(setData,`${baseUrl}/tv/popular?api_key=${apiKey}&language=en-US&page=1`,setLaoding);
     },[])
+
+    if(loading){
+        return <Spinner/>
+    }
 
     return(
         <div>
@@ -32,7 +42,7 @@ export const Tv=()=>{
             >
                 <input  type="text" name="search" placeholder="enter your search" className="p-2 bg bg-dark border rounded border-dark"/>
                 <button 
-                    className="btn bg-purple text-dark btn-md p-2"
+                    className="btn bg-purple text-white btn-md p-2"
                 >
                     search
                 </button>
@@ -52,15 +62,15 @@ export const Tv=()=>{
                                 <div
                                     key={index}
                                     onClick={()=>navigate(`/movies/details/${type}/${id}`)}
-                                    className="d-flex flex-column  moviesImg border br-10"
+                                    className="d-flex flex-column  moviesImg movie lightgreen br-10"
                                     >
                                         <img 
                                             src={`${ImgBaseUrl}/w300/${poster_path}`}
-                                            className="w-100 mb-3"
+                                            className="w-100 mb-3 br-10"
                                         />
                                         <div className="d-flex flex-column p-2">
                                             <Text 
-                                                style="fs-6 text-dark text-start mb-2 cardTitle"
+                                                style="fs-6 text-white text-start mb-2 cardTitle"
                                                 title={original_name}
                                             />
                                             <Rating

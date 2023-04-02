@@ -4,7 +4,7 @@
   height: 100vh;
   /* padding: 2rem; */
   text-align: center;
-  background: white;
+  background:  #1A2228;
 }
 .details-poster{
   width:100%;
@@ -12,14 +12,37 @@
 .pd-5{
   padding:3rem;
 }
+.lightgreen{
+  background-color: #122D36;
+  padding:0.1rem;
+}
 .bg-black{
-  background: white;
+  background:  #1A2228;
 }
 .c-grey{
   color:grey;
 }
 .wt-30{
   width:30%;
+}
+.loader{
+  position: fixed;
+  left: 0%;
+  right: 0%;
+  opacity: 0.9;
+  bottom: 0%;
+  z-index: 1000000;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1A2228;
+}
+
+.loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .wt-50{
   width:50%;
@@ -29,7 +52,8 @@
 }
 .link{
   text-decoration: none;
-  color:white;
+  color: white;
+  font-size:0.9rem;
 }
 .nowplaying{
   display:flex;
@@ -52,7 +76,7 @@
   border-radius: 10px;
 }
 .screen{
-  background: white;
+  background:  #1A2228;
   width:100%;
 }
 .overflowX{
@@ -152,6 +176,9 @@ h1{
   color: #888;
 }
 @media only screen and (min-width:320px) and (max-width:768px){
+  .link{
+    margin-left: 4rem;
+  }
   .nav-link{
     width:25%;
     flex-direction:column;
@@ -181,5 +208,8 @@ h1{
   .posterImg,.moviesImg{
     border-radius: 10px;
     width: 100%;
+  }
+  .movie{
+    width:40%;
   }
 }

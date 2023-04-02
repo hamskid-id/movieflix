@@ -20,13 +20,19 @@ export const NowPlaying=()=>{
         activeSlideIndex,
         setActiveSlideIndex
     ]=useState<number>(0);
+
+    const[
+        loading,
+        setLaoding
+    ]=useState<boolean>(false);
+
     const[
         activeSlide,
         setActiveSlide
     ]=useState<string>('http://image.tmdb.org/t/p/original/xDMIl84Qo5Tsu62c9DGWhmPI67A.jpg');
 
     useEffect(()=>{
-        FetchMovie(setData,`${baseUrl}/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`);
+        FetchMovie(setData,`${baseUrl}/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`,setLaoding);
     },[])
 
     const settings = {

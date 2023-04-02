@@ -9,8 +9,14 @@ export const UpComing=()=>{
         setData
     ]=useState<[]>([]);
 
+    const[
+        loading,
+        setLaoding
+    ]=useState<boolean>(false);
+
+
     useEffect(()=>{
-        FetchMovie(setData,`${baseUrl}/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`);
+        FetchMovie(setData,`${baseUrl}/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`, setLaoding);
     },[])
     console.log(data)
     return(

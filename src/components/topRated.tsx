@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { apiKey, baseUrl, ImgBaseUrl } from "./baseUrl";
+import { apiKey, baseUrl} from "./baseUrl";
 import { FetchMovie } from "./fetch";
+import Spinner from "./loader/loader";
 import { MovieCard } from "./moviecard";
-import { Rating } from "./rating";
-import { Text } from "./text"
 
 export const TopRated=()=>{
     const[
@@ -11,9 +10,19 @@ export const TopRated=()=>{
         setData
     ]=useState<[]>([]);
 
+    const[
+        loading,
+        setLaoding
+    ]=useState<boolean>(false);
+
     useEffect(()=>{
-        FetchMovie(setData,`${baseUrl}/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`);
+        FetchMovie(setData,`${baseUrl}/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`,setLaoding);
     },[])
+
+     if(loading){
+        return <Spinner/>
+    }
+
     return(
         <>
             <MovieCard

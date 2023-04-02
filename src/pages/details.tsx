@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { apiKey, baseUrl, ImgBaseUrl } from "../components/baseUrl";
 import { DetailsTag } from "../components/datailsrating";
-import { FetchCast, FetchDetails, FetchMovie } from "../components/fetch";
+import { FetchDetails, FetchMovie } from "../components/fetch";
 import { Layout } from "../components/layout"
+import Spinner from "../components/loader/loader";
 import { MovieCard } from "../components/moviecard";
 import { Text } from "../components/text";
 import { TrailerCard } from "../components/trailerCard";
@@ -25,6 +26,7 @@ export const Details=()=>{
         id,
         type
     }=useParams();
+
     const[
         data,
         setData
@@ -41,18 +43,25 @@ export const Details=()=>{
     ]=useState<[]>([]);
 
     const[
+        loading,
+        setLaoding
+    ]=useState<boolean>(false);
+
+    const[
         similardata,
         setSimilarData
     ]=useState<[]>([]);
 
     useEffect(()=>{
-        FetchDetails(setData,`${baseUrl}/${type}/${id}?api_key=${apiKey}&language=en-US&page=1`);
-        FetchCast(setCast,`${baseUrl}/${type}/${id}/credits?api_key=${apiKey}&language=en-US&page=1`);
-        FetchMovie(setTrailerData,`${baseUrl}/${type}/${id}/videos?api_key=${apiKey}&language=en-US&page=1`);
-        FetchMovie(setSimilarData,`${baseUrl}/${type}/${id}/similar?api_key=${apiKey}&language=en-US&page=1`);
+        FetchDetails(setData,`${baseUrl}/${type}/${id}?api_key=${apiKey}&language=en-US&page=1`, setLaoding);
+        FetchMovie(setTrailerData,`${baseUrl}/${type}/${id}/videos?api_key=${apiKey}&language=en-US&page=1`, setLaoding);
+        FetchMovie(setSimilarData,`${baseUrl}/${type}/${id}/similar?api_key=${apiKey}&language=en-US&page=1`, setLaoding);
     },[])
 
-    console.log(trailerdata)
+    if(loading){
+        return <Spinner/>
+    }
+
     return(
         <Layout>
             <div 
