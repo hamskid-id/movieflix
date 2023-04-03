@@ -12,7 +12,7 @@ export const UpComing=()=>{
     const[
         loading,
         setLaoding
-    ]=useState<boolean>(false);
+    ]=useState<boolean>(true);
 
 
     useEffect(()=>{
@@ -22,7 +22,7 @@ export const UpComing=()=>{
     return(
         <>
             <MovieCard
-                title="Up Coming"
+                title="UpComing Movies"
                 data={data}
                 type="movie"
             />

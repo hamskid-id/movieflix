@@ -21,23 +21,23 @@ export const DetailsTag=({
             />
             <Text
                 title={amount}
-                style="text-white fs-7 me-2 ms-0"
+                style="text-azure fs-7 me-2 ms-0"
             />
             <Text
                 title="."
-                style="text-white fs-7 me-2"
+                style="text-azure fs-7 me-2"
             />
             <Text
                 title={runtime}
-                style="text-white fs-7 me-2"
+                style="text-azure fs-7 me-2"
             />
             <Text
                 title="."
-                style="text-white fs-7 me-2"
+                style="text-azure fs-7 me-2"
             />
             <Text
                 title={release_date}
-                style="text-white fs-7"
+                style="text-azure fs-7"
             />
             
         </div>

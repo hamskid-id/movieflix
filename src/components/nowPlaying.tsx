@@ -24,7 +24,7 @@ export const NowPlaying=()=>{
     const[
         loading,
         setLaoding
-    ]=useState<boolean>(false);
+    ]=useState<boolean>(true);
 
     const[
         activeSlide,
@@ -52,7 +52,7 @@ export const NowPlaying=()=>{
       };
     return(
         <div 
-            className="w-100 pd-5 relative"
+            className="w-100 pd-5 relative mb-3"
         >
             <div  className="wrapper"
                 style={{

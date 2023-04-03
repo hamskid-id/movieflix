@@ -19,11 +19,11 @@ export const Rating=({
                 />
                 <Text
                     title={amount}
-                    style="text-white fs-7"
+                    style="text-azure fs-7"
                 />
             </div>
             <Text 
-                style="text-white fs-7"
+                style="text-azure fs-7"
                 title={date}
             />
         </div>

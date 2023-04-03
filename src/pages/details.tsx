@@ -45,7 +45,7 @@ export const Details=()=>{
     const[
         loading,
         setLaoding
-    ]=useState<boolean>(false);
+    ]=useState<boolean>(true);
 
     const[
         similardata,
@@ -67,7 +67,7 @@ export const Details=()=>{
             <div 
                 className="w-100"
             >
-                <div className="w-100 relative  pd-5">
+                <div className="w-100 relative pd-5 mb-3">
                     <div  className="wrapper br-10"
                         style={{
                             backgroundImage:`url(${ImgBaseUrl}/original/${data?.backdrop_path})`
@@ -88,7 +88,7 @@ export const Details=()=>{
                             <div className="d-flex flex-column p-3">
                                 <Text 
                                     title={type==="movie"?data?.original_title:data?.name}
-                                    style="display-5 text-white text-start fw-bold"
+                                    style="display-5 text-azure text-start fw-bold"
                                 />
                                 <DetailsTag
                                     amount={data?.vote_average}
@@ -105,7 +105,7 @@ export const Details=()=>{
                                                 <Text 
                                                     key={index}
                                                     title={name}
-                                                    style="fs-6 rounded border text-white me-2 px-2 py-1 mt-1"
+                                                    style="fs-6 rounded border text-azure me-2 px-2 py-1 mt-1"
                                                 />
                                             )
                                         })
@@ -113,7 +113,7 @@ export const Details=()=>{
                                 </div>
                                 <Text 
                                     title={data?.overview}
-                                    style="fs-6 text-white text-start mb-2"
+                                    style="fs-6 text-azure text-start mb-2"
                                 />
                                 <div>
                                     <Text 

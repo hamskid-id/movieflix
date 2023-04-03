@@ -10,7 +10,9 @@ export const Layout=({
     return(
         <div className="screen">
             <Header/>
-            {children}
+            <div className="children pt-3">
+                {children}
+            </div>
             <Footer/>
         </div>
     )

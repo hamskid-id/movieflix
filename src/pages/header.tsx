@@ -8,27 +8,13 @@ export const Header=()=>{
     const navigate = useNavigate();
     return(
         <>
-            <nav className="navbar navbar-expand-lg bg-black">
+            <nav className="navbar navbar-expand-lg bg-black shadow">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">
-                        <NavBrand/></a>
-                    <button 
-                        className="navbar-toggler" 
-                        type="button" 
-                        data-bs-toggle="collapse" 
-                        data-bs-target="#navbarScroll" 
-                        aria-controls="navbarScroll" 
-                        aria-expanded="false" 
-                        aria-label="Toggle navigation"
-                    >
-                        <FaAlignJustify
-                            color="grey"
-                            size="0.5rem"
-                            className="navbar-toggler-icon"
-                        />
-                    </button>
+                        <NavBrand/>
+                    </a>
                     <div className="collapse navbar-collapse" id="navbarScroll">
-                        <div className=" nav-link">
+                        <div className="nav-link">
                                 {
                                     [
                                         {
@@ -40,6 +26,9 @@ export const Header=()=>{
                                         },{
                                             name:"Tv Series",
                                             route:"/tv"
+                                        },{
+                                            name:"Bookmarks",
+                                            route:"/bookmarks"
                                         }
                                     ].map((routes,index)=>{
                                         const{

@@ -13,7 +13,7 @@ export const TopRated=()=>{
     const[
         loading,
         setLaoding
-    ]=useState<boolean>(false);
+    ]=useState<boolean>(true);
 
     useEffect(()=>{
         FetchMovie(setData,`${baseUrl}/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`,setLaoding);
@@ -26,7 +26,7 @@ export const TopRated=()=>{
     return(
         <>
             <MovieCard
-                title="Top Rated"
+                title="Top Rated Movies"
                 data={data}
                 type="movie"
             />

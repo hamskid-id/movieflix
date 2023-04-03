@@ -19,7 +19,6 @@ export const FetchMovie=async(setdata:set,url:string,SetloadingState:loading)=>{
         SetloadingState(true);
         const response= await axios.get(url);
         const data= response?.data;
-        console.log(data)
         setdata(data?.results)
         SetloadingState(false);
     }catch(err){
@@ -27,6 +26,20 @@ export const FetchMovie=async(setdata:set,url:string,SetloadingState:loading)=>{
         console.log(err);
     }
 }
+
+export const FetchGenre = async(setdata:set,url:string,SetloadingState:loading)=>{
+    try{
+        SetloadingState(true);
+        const response= await axios.get(url);
+        const data= response?.data;
+        setdata(data?.genres)
+        SetloadingState(false);
+    }catch(err){
+        SetloadingState(false);
+        console.log(err);
+    }
+}
+
 
 export const FetchDetails = async(setdata:details,url:string,SetloadingState:loading)=>{
     try{

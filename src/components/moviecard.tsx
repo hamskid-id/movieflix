@@ -1,11 +1,13 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useDispatch} from "react-redux";
 import Slider from "react-slick";
 import { ImgBaseUrl } from "./baseUrl";
 import { Rating } from "./rating";
 import { Text } from "./text"
-import { Btn } from "./btn";
 import { useNavigate } from "react-router-dom";
+import { Bookmarks } from "./bookmarks";
+import { bookActions } from "../store/bookmarksSlice";
 type CardProp={
     title:string,
     data:[],
@@ -16,6 +18,8 @@ export const MovieCard=({
     data,
     type
 }:CardProp)=>{
+
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const settings = {
         arrows: false,
@@ -60,10 +64,10 @@ export const MovieCard=({
         <div 
             className="w-100 pd-2x"
         >
-            <div className="pt-3">
+            <div>
                 <Text
                     title={title}
-                    style="text-white fs-6 text-start"
+                    style="text-azure fs-6 text-start"
                 />
             </div>
             <Slider {...settings}>
@@ -79,17 +83,17 @@ export const MovieCard=({
                         return(
                             <div className="m-4 p-2">
                                 <div
-                                    className="d-flex flex-column lightgreen br-10"
+                                    className="d-flex flex-column lightgreen br-10 relative"
                                     key={index}
-                                    onClick={()=>navigate(`/movies/details/${type}/${id}`)}
                                     >
                                         <img 
                                             src={`${ImgBaseUrl}/w300/${poster_path}`}
                                             className="w-100 br-10 mb-3"
+                                            onClick={()=>navigate(`/movies/details/${type}/${id}`)}
                                         />
                                         <div className="d-flex flex-column p-2">
                                             <Text 
-                                                style="fs-6 text-white text-start mb-2 cardTitle"
+                                                style="fs-6 text-azure text-start mb-2 cardTitle"
                                                 title={original_title}
                                             />
                                             <Rating
@@ -97,6 +101,20 @@ export const MovieCard=({
                                                 date={release_date}
                                             />
                                         </div>
+                                        <Bookmarks
+                                            handleClick={()=>
+                                                dispatch(
+                                                    bookActions.addToBookmarked({
+                                                        poster_path,
+                                                        id,
+                                                        vote_average,
+                                                        original_title,
+                                                        release_date,
+                                                        type
+                                                    })
+                                                )
+                                            }
+                                        />
                                 </div>
                             </div>
                         )

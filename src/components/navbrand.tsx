@@ -10,7 +10,7 @@ export const NavBrand=({
     return(
         <div className="d-flex align-items-center">
             <FaPlayCircle
-                color="red"
+                color="palegreen"
                 size="2.5rem"
                 className="me-1"
             />
