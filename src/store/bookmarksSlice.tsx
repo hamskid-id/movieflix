@@ -28,11 +28,11 @@ const bookmarks_Slice = createSlice({
             const existingItem = state.bookContent.find((item:item) => item.id === id)
 
             if(existingItem){
-               toast.success('Movie added  to bookmarks',{
+               toast('Movie added  to bookmarks',{
                 position:"bottom-left"
                })
             }else{
-                toast.success('Movie Bookmarked',{
+                toast('Movie Bookmarked',{
                     position:"bottom-left",
                 });
                 state.bookContent.push(action.payload);

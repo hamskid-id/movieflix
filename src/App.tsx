@@ -7,6 +7,8 @@ import { Details } from './pages/details';
 import { Provider } from 'react-redux';
 import store from './store';
 import { BookmarksScreen } from './pages/bookmarksScreen';
+import { ToastContainer} from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -21,6 +23,7 @@ function App() {
           <Route path="/movies/details/:type/:id" element={ <Details/>}/>
         </Routes>
       </Router>
+      <ToastContainer />
     </Provider>
   )
 }
