@@ -52,9 +52,9 @@ export const HeadLayout =({
                     className="my-3"
                     onSubmit={handleSubmit}
                 >
-                    <input  type="text" placeholder="enter your search" name="search" className="p-1 bg bg-dark border rounded border-dark"/>
+                    <input  type="text" placeholder="enter your search" name="search" className="p-2 bg bg-dark border rounded border-dark"/>
                     <button 
-                        className="btn btn-success text-azure btn-md p-1"
+                        className="btn btn-success text-azure btn-md p-2"
                     >
                         <FaSistrix/>
                     </button>
