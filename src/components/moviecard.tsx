@@ -54,7 +54,7 @@ export const MovieCard=({
           breakpoint: 480,
           settings: {
             slidesToShow: 2,
-            slidesToScroll:23,
+            slidesToScroll:2,
             centerMode:false,
           }
         }
