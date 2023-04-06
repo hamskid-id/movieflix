@@ -1,4 +1,4 @@
-import { FaPlayCircle } from "react-icons/fa";
+import { FaFilm } from "react-icons/fa";
 import { Text } from "./text";
 
 type navProp={
@@ -9,7 +9,7 @@ export const NavBrand=({
 }:navProp)=>{
     return(
         <div className="d-flex align-items-center">
-            <FaPlayCircle
+            <FaFilm
                 color="palegreen"
                 size="2.5rem"
                 className="me-1"

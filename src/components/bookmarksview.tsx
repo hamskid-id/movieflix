@@ -4,7 +4,7 @@ import store from "../store";
 import { ImgBaseUrl } from "./baseUrl";
 import { Rating } from "./rating";
 import { Text } from "./text";
-import { FaHotjar,FaBookmark,FaPhotoVideo,FaDesktop } from "react-icons/fa";
+import {FaBookmark } from "react-icons/fa";
 
 export const BookmarksView=()=>{
     const item = useSelector((state:ReturnType<typeof store.getState>)=>state.bookmark);
@@ -17,7 +17,7 @@ export const BookmarksView=()=>{
             <div>
                 <div className="trendingPar mb-1">
                     <div className="d-flex align-items-center mb-2">
-                        <FaHotjar 
+                        <FaBookmark 
                             color="palegreen" 
                             size="1rem"
                             className="me-2"

@@ -28,7 +28,7 @@ export const HeadLayout =({
                 <div className="d-flex align-items-center mb-2">
                     {
                         movieType==="movies"?
-                        <FaDesktop
+                        <FaHotjar
                             color="palegreen"
                             size="1.5rem"
                             className="me-2"
