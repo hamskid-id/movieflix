@@ -68,7 +68,7 @@ export const Details=()=>{
                 className="w-100"
             >
                 <div className="w-100 relative pd-5 mb-3">
-                    <div  className="wrapper br-10"
+                    <div  className="wrapper"
                         style={{
                             backgroundImage:`url(${ImgBaseUrl}/original/${data?.backdrop_path})`
                         }}>
